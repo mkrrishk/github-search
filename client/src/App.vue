@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import GitHubSearch from '@/pages/GitHubSearch.vue'
+</script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <h2 class="text-2xl font-semibold">GitHub Search</h2>
+  <div class="min-h-screen overflow-hidden bg-white">
+    <GitHubSearch />
   </div>
 </template>
