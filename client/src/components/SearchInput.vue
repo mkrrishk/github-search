@@ -29,6 +29,7 @@ debouncedWatch(
     <input
       id="search"
       v-model="searchValue"
+      data-testid="search-input"
       type="search"
       name="search"
       placeholder="Search Repository"
