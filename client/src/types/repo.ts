@@ -19,3 +19,8 @@ export interface Repository {
 }
 
 export type Repositories = Repository[]
+
+export interface FavRepoResponse {
+  status: string
+  message: string
+}

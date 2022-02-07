@@ -1,5 +1,6 @@
 import express, { Application } from 'express'
 import Controller from '@/utils/Controller'
+import cors from 'cors'
 
 class App {
   public express: Application
@@ -14,6 +15,7 @@ class App {
   }
 
   private initialiseMiddleware(): void {
+    this.express.use(cors())
     this.express.use(express.json())
     this.express.use(express.urlencoded({ extended: false }))
   }

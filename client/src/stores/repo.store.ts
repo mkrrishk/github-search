@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Repositories, Repository } from '@/types/repo' // had to add type due to https://github.com/vitejs/vite/issues/2117
-import { searchGitHubRepos } from '@/services/repo.service'
+import { saveFavouriteRepo, searchGitHubRepos } from '@/services/repo.service'
 import { calculateDownloadTime } from '@/utils/utils'
 
 export const useRepoStore = defineStore('repo', {
@@ -23,8 +23,10 @@ export const useRepoStore = defineStore('repo', {
     },
     toggleFavourite(index: number) {
       const repo = this.repos[index]
+      if (!repo.isFavourite) {
+        saveFavouriteRepo(this.repos[index])
+      }
       this.repos[index].isFavourite = !repo.isFavourite
-      console.log('Fav Repo - ', repo) // Make an API call to save the Fav Repo
     },
   },
 })
