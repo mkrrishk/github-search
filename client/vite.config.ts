@@ -11,6 +11,9 @@ export default defineConfig({
     },
   },
   plugins: [vue()],
+  server: {
+    host: true,
+  },
   test: {
     globals: true,
     environment: 'jsdom',

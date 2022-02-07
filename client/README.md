@@ -13,7 +13,7 @@ An App to Search, List & Favourite GitHub Repositories
 
 Clone the Repo `git clone https://github.com/mkrrishk/github-search.git`
 
-In the project directory, you can run:
+In the client directory, you can run:
 
 ### `npm install`
 

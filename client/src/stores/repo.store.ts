@@ -22,11 +22,11 @@ export const useRepoStore = defineStore('repo', {
       })
     },
     toggleFavourite(index: number) {
-      const repo = this.repos[index]
-      if (!repo.isFavourite) {
+      const { isFavourite } = this.repos[index]
+      if (!isFavourite) {
         saveFavouriteRepo(this.repos[index])
       }
-      this.repos[index].isFavourite = !repo.isFavourite
+      this.repos[index].isFavourite = !isFavourite
     },
   },
 })

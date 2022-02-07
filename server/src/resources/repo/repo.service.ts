@@ -10,12 +10,19 @@ class RepoService {
     downloadTime: string
   ): Promise<Repositories | Error> {
     try {
-      this.repos.push({
-        name,
-        userName,
-        size,
-        downloadTime,
-      })
+      //Check for Duplicate Entries
+      const doesRepoExist = this.repos.some(
+        (repo) => repo.name === name && repo.userName === userName
+      )
+
+      if (!doesRepoExist) {
+        this.repos.push({
+          name,
+          userName,
+          size,
+          downloadTime,
+        })
+      }
       return this.repos
     } catch (error) {
       console.log(error)

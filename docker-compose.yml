@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - ./server/src:/app/src
+    environment:
+      PORT: 3001
+  client:
+    build:
+      context: ./client
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./client/src:/app/src
+    stdin_open: true
+    depends_on:
+      - server
