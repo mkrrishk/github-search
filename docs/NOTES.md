@@ -21,6 +21,9 @@ This Doc includes info about the Design, Architecture & the Setup Decisions/Choi
 * Both ESLint & Prettier have been Setup.
 * @heroicons/vue package has been used for SVG Images. It is created & Maintained by the Tailwind CSS Creators.
 * [@vueuse/core](https://vueuse.org/) library has been used to watch(with debounce) the search input changes. This is a popular library which offers lot of utilities as Composable functions that can be used with Vue 3.
+* axios Library has been used for making the API Requests.
+* Storage Layer or Global State has been setup using [pinia](https://pinia.vuejs.org/). This is the official State Management Library recommended by the Vue Team going forward. It's API is quite similar to Vuex and has excellent TypeScript Support.
+* Global State includes the Search term (with Tetris as default value) and the Repository List fetched from GitHub. It also includes two actions to fetch the repositores and to track the Favourite Repositories. In the GitHubSearch page Repositories are fetched immediately and are rendered. And, if the Search Term is changed (debounced to 1 Sec) in the Search Input, Action to fetch Repos will be triggered again.
 
 ## Backend
 

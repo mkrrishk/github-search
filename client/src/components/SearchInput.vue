@@ -9,7 +9,9 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['on-search'])
+const emit = defineEmits<{
+  (event: 'on-search', searchTerm: string): void
+}>()
 
 const searchValue = ref(props.search)
 debouncedWatch(

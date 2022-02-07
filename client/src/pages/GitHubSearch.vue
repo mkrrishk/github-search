@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import RepositoryList from '@/components/RepositoryList.vue'
 import SearchInput from '@/components/SearchInput.vue'
-import { ref } from 'vue'
+import { useRepoStore } from '@/stores/repo.store'
 
-const search = ref('Tetris')
-const onSearch = (search: string): void => {
-  console.log('onSearch', search) // use this to make new API Call
+const repoStore = useRepoStore()
+repoStore.getRepos()
+
+const onSearch = (searchTerm: string): void => {
+  repoStore.searchTerm = searchTerm
+  repoStore.getRepos()
+}
+
+const onFavourite = (updatedIndex: number): void => {
+  repoStore.toggleFavourite(updatedIndex)
 }
 </script>
 
@@ -17,8 +24,8 @@ const onSearch = (search: string): void => {
       GitHub Search
     </h2>
     <div class="flex flex-col gap-6 overflow-hidden p-4">
-      <SearchInput :search="search" @on-search="onSearch" />
-      <RepositoryList />
+      <SearchInput :search="repoStore.searchTerm" @on-search="onSearch" />
+      <RepositoryList :repos="repoStore.repos" @on-favourite="onFavourite" />
     </div>
   </div>
 </template>
