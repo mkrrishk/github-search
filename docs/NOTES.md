@@ -32,3 +32,8 @@ This Doc includes info about the Design, Architecture & the Setup Decisions/Choi
 * A basic Setup where HTTP Requests are served via Repo Controller @ /api/repos route. 
 * This End point Allows both POST and GET Requests.
 * Database Storage is to be setup. Currently persisting the data in memory.
+
+## Additional Info
+
+* Building both Apps took me about 8-10 Hours. I've spent most of time Researching and going through Documentation for Various Frameworks/Libraries. There were a lot of new Libraries that I've used here including Vue 3 with Composition API. Overall, I've really Enjoyed the Process.
+* Containerizing the App was the initial idea. It would be an ideal setup where both apps can be started with a single docker-compose command. I've run into some errors while setting it up, Will include those if time permits.

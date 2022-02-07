@@ -1,13 +1,12 @@
-# GitHub Search UI
+# GitHub Search Service
 
 An App to Search, List & Favourite GitHub Repositories
 
 ## Tech Stack
 
-* Vue 3
+* Node.js
+* Express
 * TypeScript
-* Pinia
-* Tailwind CSS
 
 ## How to Run?
 
@@ -22,11 +21,7 @@ To install the dependencies.
 ### `npm run dev`
 
 To Run the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### `npm run test`
-
-To Launch the test runner.
+Open [http://localhost:3001/api/repos](http://localhost:3001/api/repos) to view it in the browser.
 
 ### `npm run build`
 
