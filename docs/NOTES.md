@@ -24,6 +24,7 @@ This Doc includes info about the Design, Architecture & the Setup Decisions/Choi
 * axios Library has been used for making the API Requests.
 * Storage Layer or Global State has been setup using [pinia](https://pinia.vuejs.org/). This is the official State Management Library recommended by the Vue Team going forward. It's API is quite similar to Vuex and has excellent TypeScript Support.
 * Global State includes the Search term (with Tetris as default value) and the Repository List fetched from GitHub. It also includes two actions to fetch the repositores and to track the Favourite Repositories. In the GitHubSearch page Repositories are fetched immediately and are rendered. And, if the Search Term is changed (debounced to 1 Sec) in the Search Input, Action to fetch Repos will be triggered again.
+* A Basic Unit Test has been Setup with [Vitest](https://vitest.dev/) and Vue testing Library. Vitest is Compatible with Vite out of the box and provides same API as Jest. However it is still in Development, but is already being used by many projects. I've run into an issue Accessing/Validating DOM Elements with it. Need to Spend futher time to Address this.
 
 ## Backend
 
