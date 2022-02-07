@@ -28,4 +28,7 @@ This Doc includes info about the Design, Architecture & the Setup Decisions/Choi
 
 ## Backend
 
-* Notes
+* Backend Project has been Setup using Express.js and TypeScript.
+* A basic Setup where HTTP Requests are served via Repo Controller @ /api/repos route. 
+* This End point Allows both POST and GET Requests.
+* Database Storage is to be setup. Currently persisting the data in memory.
